@@ -1,7 +1,7 @@
-No <- 100
-R <- 1.05
+No <- 200
+R <- 0.8
 maxtime <- 10
-K <- 0.9
+K <- 2
 
 
 NN<- matrix(NA, nrow=1, ncol=maxtime+1)
