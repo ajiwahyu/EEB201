@@ -8,7 +8,7 @@ geomFunction <- function (No, R, maxtime) {
   NN
   }
 
-geomFunction(10, 0.95, 10)
+geomFunction(10, 0.7, 10)
 
 
 
