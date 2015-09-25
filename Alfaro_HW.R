@@ -8,13 +8,10 @@ for (i in 1:9){
   cat("*&", sep="")
 }
 #Exercise 3 (1)
-11
-12
-13
-14
+
 15
 #Exercise 3 (2)
--4-9-15-22-30
+-30
 #Exercise 3 (3)
 -4
 #Exercise 4, inclu

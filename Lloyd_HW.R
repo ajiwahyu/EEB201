@@ -10,7 +10,7 @@ for (tt in 1:ttMax) {NN[tt+1]<- RR*NN[tt]
 }
 plot(1:(ttMax+1), NN, xlab="time", ylab="N", type="b", col='blue')
 
-#Declining Population
+#3.2.1 Declining Population
 N0<-25
 RR<-0.9
 ttMax<-100
@@ -22,7 +22,7 @@ for (tt in 1:ttMax) {NN[tt+1]<- RR*NN[tt]
 }
 plot(1:(ttMax+1), NN, xlab="time", ylab="N", type="b", col='blue')
 
-#function exercise
+#3.2.2 function exercise
 ttMax <- 100
 geomFunction <- function(N0, RR) {
   NN<- matrix(NA, nrow=1, ncol=ttMax+1);NN
@@ -46,29 +46,28 @@ geomfunction2<- function(N0, R, K) {
 }
 geomfunction2(10, 0.5, 100)
 
-#3.3.2
-ttMax <- 100
-N0 <- 10
-K = 100
-par(mfrow=c(2,3))
-rdVec<- c(-0.3, 0.3, 1.3, 1.9, 2.2, 2.7)
+#3.3.2 
+rdVec <- c(-0.3, 0.3, 1.3, 1.9, 2.2, 2.7);
+discreteLogisticFun <- function(rdVec){
+        NN <- matrix(NA, nrow = 1, ncol = ttMax+1);
+        NN[1] <- 10;
+        KK <- 100;
+        ttMax <- 100;
+        par(mfrow = c(2,3));
+        for(pp in 1:length(rdVec)){
+                rd.val = rdVec[pp]
+                for(tt in 1:ttMax){
+                        NN[tt+1] <- NN[tt]*(1 + rd.val * (1-NN[tt]/KK))
+                }
+                plot(1:(ttMax+1), NN, xlab = "time", ylab = "N", col="blue")
+        }}
+discreteLogisticFun(rdVec = rdVec)
 
-for (i in 1 to length(rdVec) {geomfunction2<- function(rdVec) {
-  
-NN<- matrix(NA, nrow=1, ncol=ttMax+1)
-  NN[1]= N0
-  for (tt in 1:length(rdVec)) {
-    NN[tt+1]= NN[tt]*    (1+   rdVec*    (1-(NN[tt]/K)))}
-  NN
-  plot(1:(ttMax+1), NN, xlab="time", ylab="N", col="blue")
-}
-}
-geomfunction2(-0.3)
 
 install.packages('deSolve')
 library(deSolve)
 
-#4.1
+#4.1.1 
 
 expGrowthODE<- function (tt, yy, pars) {
   derivs <- pars["rr"] * yy
@@ -84,7 +83,7 @@ plot(expGrowthOutput[ ,1], expGrowthOutput[,2])
 
 
 
-#4.2
+#4.2.1
 
 expGrowthODE<- function (tt, yy, pars) {
   derivs <- pars["rr"] * yy (1 - (yy/(pars["k"]))
@@ -125,16 +124,6 @@ expGrowthODE<- function (tt, yy, pars) {
 
 
 head
-
-
-
-
-
-
-
-
-
-
 
 
 
