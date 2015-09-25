@@ -74,11 +74,10 @@ num_pval<- length(pvals)
 
 
 nn <- 1:length(pvals)
-for(i in 1:length(pvals))
-        {exp_pvals[i]<- nn[i]/num_pval}
+for(i in 1:length(pvals)){
+        exp_pvals[i] <- nn[i]/num_pval
+}
         
-        
-
 
 sort_pvals <- sort(pvals)
 log_short_pvals <- -log10(sort_pvals)
