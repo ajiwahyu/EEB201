@@ -63,21 +63,21 @@ mean(pvals<signifthres) # 181
 
 signifthres<-0.01
 sum(pvals<signifthres) 
-mean(pvals<signifthres) # 41
+mean(pvals<signifthres) 
 
 signifthres<-0.001
 sum(pvals<signifthres) 
-mean(pvals<signifthres) # 5
+mean(pvals<signifthres) 
 
 length(pvals)
 num_pval<- length(pvals)
-# 4014
+
 
 nn <- 1:length(pvals)
-for(i in 1:length(pvals)){
-        exp_pvals[i] <- nn[i]/num_pval
+for(i in 1:length(pvals))
+        {exp_pvals[i]<- nn[i]/num_pval}
         
-}
+        
 
 
 sort_pvals <- sort(pvals)
